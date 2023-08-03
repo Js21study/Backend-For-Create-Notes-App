@@ -4,7 +4,7 @@ import { router } from './routes/notes.js';
 
 mongoose
   .connect(
-    'mongodb+srv://admin:12345qwerty@cluster0.n9ckvre.mongodb.net/notes?retryWrites=true&w=majority',
+    'mongodb+srv://admin:*****@cluster0.n9ckvre.mongodb.net/notes?retryWrites=true&w=majority',
   )
   .then(() => console.log('db is launched'))
   .catch((err) => console.log('db error', err));
