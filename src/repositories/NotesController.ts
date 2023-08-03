@@ -18,7 +18,7 @@ export const remove = async (req: Request, res: Response) => {
     const noteId = req.params.id;
     NotesModel.findOneAndDelete({
       _id: noteId,
-    }).then((doc: any) => {
+    }).then((doc) => {
       if (!doc) {
         return res.status(404).json({
           message: 'This note is undefinded',
@@ -50,7 +50,7 @@ export const update = async (req: Request, res: Response) => {
         category: req.body.category,
         dates: req.body.dates,
       },
-    ).then((doc: any) => {
+    ).then((doc) => {
       if (!doc) {
         return res.status(500).json({
           message: 'It is impossible to update this note!',
@@ -108,7 +108,7 @@ export const archive = async (req: Request, res: Response) => {
       {
         returnDocument: 'after',
       },
-    ).then((doc: any) => {
+    ).then((doc) => {
       if (!doc) {
         return res.status(500).json({
           message: 'It is impossible to update this note!',
